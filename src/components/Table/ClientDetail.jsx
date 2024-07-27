@@ -5,7 +5,29 @@ import { IoIosArrowForward } from "react-icons/io";
 import notify from "../../assets/add_notes (black).png";
 
 function ClientDetails() {
+  const [showPopup, setShowPopup] = useState(false);
+  const [currentNote, setCurrentNote] = useState(null);
 
+  const togglePopup = (note) => {
+    setShowPopup(!showPopup);
+    setCurrentNote(note);
+  };
+
+  const NotePopup = ({ note, onClose }) => (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+      <div className="bg-white p-4 rounded-lg shadow-lg max-w-sm">
+        <h3 className="font-bold text-lg mb-2">{note.name}</h3>
+        <p className="text-sm text-gray-600 mb-2">{note.date}</p>
+        <p className="mb-4">{note.content}</p>
+        <button 
+          onClick={onClose}
+          className="bg-gray-200 px-4 py-2 rounded hover:bg-gray-300"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  );
 
 
   return (
@@ -267,7 +289,14 @@ function ClientDetails() {
                         }}
                         className="py-2 px-2"
                       >
-                        <img src={notify}/>
+                        <img src={notify}
+                        onClick={() => togglePopup({
+                          name: "Kapil Verma",
+                          date: "26 June | 5:33 PM",
+                          content: "Discussed budget and preferred location. Client is interested in a 2-bedroom condo in a central area with easy access to public transportation. Suggested scheduling a property tour for next week."
+                        })}
+                        style={{ cursor: 'pointer' }}
+                        />
                       </td>
                       <td
                         style={{
@@ -953,6 +982,8 @@ function ClientDetails() {
           </div>
         </div>
       </main>
+
+      {showPopup && <NotePopup note={currentNote} onClose={() => setShowPopup(false)} />}
     </div>
   );
 }
