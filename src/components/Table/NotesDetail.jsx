@@ -21,8 +21,8 @@ const TabBar = ({ activeTab, setActiveTab }) => (
         style={{ fontFamily:'Manrope', padding:'10px 10px', width:'121px'}}
         className={`  ${
           activeTab === tab
-            ? "bg-[#3D2314] text-white rounded-l-[24px]"
-            : "bg-white text-[#3D2314] "
+            ? "bg-[#3D2314] text-white rounded-[24px]"
+            : "bg-white text-[#3D2314]"
         }`}
         onClick={() => setActiveTab(tab)}
       >

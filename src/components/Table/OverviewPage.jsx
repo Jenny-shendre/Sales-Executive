@@ -1,5 +1,5 @@
 import React from 'react';
-
+import "../Home.css";
 import iconone from '../../assets/mdi_leads-outline.png';
 import icontwo from '../../assets/uil_calender.png'
 import iconthree from '../../assets/material-symbols_lock-outline.png';
@@ -119,9 +119,10 @@ opacity: '0px',
 
 {/* 
           table code */}
-          
-          <div className="bg-white w-[739px] h-[213px] rounded-lg shadow"  style={{padding:'18px 24px', borderRadius:'12px'}}>
+         
+          <div className="bg-white w-[739px] h-[180px] rounded-lg shadow "  style={{padding:'18px 24px', borderRadius:'12px'}}>
           <table className=" bg-white shadow-sm rounded-lg overflow-hidden">
+          <div className='wrapperD'>
           <thead className="bg-gray"style={{fontSize:"12px",fontWeight:"400",color:"#4B4B4B",fontFamily:"Manrope",height:"36px"}}>
             <tr>
               <th className="py-2 px-4 text-left"style={{width:"161px"}}>Date</th>
@@ -132,7 +133,8 @@ opacity: '0px',
              
             </tr>
           </thead>
-          <tbody>
+          
+          <tbody >
             <tr>
            
                      
@@ -171,9 +173,33 @@ opacity: '0px',
               </td>
               <td style={{color:"#000000",fontSize:"18px",textAlign:"center",fontFamily:"Manrope",fontWeight:"600"}}>05 : 00</td>
             </tr>
+
+            <tr  style={{border:'1px solid #C9C9C9'}}>
+              <td className="py-2 px-2"style={{color:"#5C5C5C",fontSize:"18px"}}>26 June | 5:33 PM</td>
+              <td className="py-2 px-2 flex justify-between items-center">
+                <span className=" py-1 px-2 rounded text-center" style={{color:"#9E932A",background:"#EBEE5D", fontSize:"8px",fontWeight:"600",width:"58px", height:"19px"}}>
+                Existing
+                </span> <span style={{color:"#5C5C5C",fontSize:"18px"}}>Suraj Tiwari</span>
+              </td>
+              <td style={{color:"#5C5C5C",fontSize:"18px", textAlign:'center'}}>Project Alayas</td>
+            
+              
+              <td className="py-2 px-4 flex justify-around">
+                <button className="text-green-500 mr-2">✓</button>
+                <button className="text-red-500">✕</button>
+              </td>
+              <td style={{color:"#000000",fontSize:"18px",textAlign:"center",fontFamily:"Manrope",fontWeight:"600"}}>05 : 00</td>
+            </tr>
+            
+           
+            
           </tbody>
+          </div>
         </table>
+        
         </div>
+          
+        
           
           
         </div>
@@ -254,7 +280,8 @@ card 2 */}
 
 
 
-        </div>
+        
+      </div>
       </div>
     </div>
   );
