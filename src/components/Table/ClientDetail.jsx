@@ -1,16 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Home.css";
 import Searchsvg from "../../assets/material-symbols_search.svg";
 import { IoIosArrowForward } from "react-icons/io";
 import notify from "../../assets/add_notes (black).png";
+import backButtton from "../../assets/back-button.png";
+import stopButton from "../../assets/stop-button.png";
 
 function ClientDetails() {
+  const [iconState, setIconState] = useState({
+    correct1: true,
+    cross1: true,
+    correct2: true,
+    cross2: true,
+  });
+
+  const handleCorrectClick = (correctClass, crossClass) => {
+    setIconState((prevState) => ({
+      ...prevState,
+      [correctClass]: false,
+      [crossClass]: false,
+    }));
+  };
+
+  const handleCrossClick = (correctClass, crossClass) => {
+    setIconState((prevState) => ({
+      ...prevState,
+      [correctClass]: true,
+      [crossClass]: true,
+    }));
+  };
+
   return (
     <div>
       <div
         style={{ gap: "20px", paddingTop: "30px" }}
-        className="p-4 overflow-x-auto flex flex-col gap-9 bg-custom-bg;
-        "
+        className="p-4 overflow-x-auto flex flex-col gap-9 bg-custom-bg"
       >
         <h1
           className="font-bold flex items-center gap-1"
@@ -43,7 +67,7 @@ function ClientDetails() {
             <h2
               style={{
                 textAlign: "justify",
-                fontfamily: "Manrope",
+                fontFamily: "Manrope",
                 fontSize: "18px",
                 fontWeight: "600",
                 lineHeight: "24.59px",
@@ -100,7 +124,7 @@ function ClientDetails() {
                           fontWeight: "400",
                           lineHeight: "16.39px",
                           color: "#4B4B4B",
-                          width:'85px'
+                          width: '85px'
                         }}
                         className="py-2 px-4 text-left"
                       >
@@ -113,7 +137,7 @@ function ClientDetails() {
                           fontWeight: "400",
                           lineHeight: "16.39px",
                           color: "#4B4B4B",
-                          textAlign:'center'
+                          textAlign: 'center'
                         }}
                         className="py-2 px-4 "
                       >
@@ -126,7 +150,7 @@ function ClientDetails() {
                           fontWeight: "400",
                           lineHeight: "16.39px",
                           color: "#4B4B4B",
-                          textAlign:'center'
+                          textAlign: 'center'
                         }}
                         className="py-2 px-4 "
                       >
@@ -159,7 +183,7 @@ function ClientDetails() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <tr >
                       <td
                         style={{
                           fontFamily: "Manrope",
@@ -181,13 +205,13 @@ function ClientDetails() {
                           lineHeight: "21.86px",
                           color: "#5C5C5C",
                           borderBottom: "1px solid #E4E7EC",
-                          display:'flex',
-                          justifyContent:'space-between',
-                          textAlign:'center',
-                          alignContent:'center',
-                          alignItems:'center'
+                          display: 'flex',
+                          justifyContent: 'space-between',
+                          textAlign: 'center',
+                          alignContent: 'center',
+                          alignItems: 'center'
                         }}
-                        
+
                       >
                         <span className="bg-green-200 text-green-800 py-1 px-2 rounded">
                           New Client
@@ -204,7 +228,7 @@ function ClientDetails() {
                           lineHeight: "21.86px",
                           color: "#5C5C5C",
                           borderBottom: "1px solid #E4E7EC",
-                          textAlign:'center'
+                          textAlign: 'center'
                         }}
                         className="py-2 px-2"
                       >
@@ -218,11 +242,11 @@ function ClientDetails() {
                           lineHeight: "21.86px",
                           color: "#5C5C5C",
                           borderBottom: "1px solid #E4E7EC",
-                          textAlign:'center'
+                          textAlign: 'center'
                         }}
                         className="py-2 px-2"
                       >
-                        05 : 00 
+                        05 : 00
                       </td>
                       <td
                         style={{
@@ -232,7 +256,7 @@ function ClientDetails() {
                           lineHeight: "21.86px",
                           color: "#5C5C5C",
                           borderBottom: "1px solid #E4E7EC",
-                          textAlign:'center'
+                          textAlign: 'center'
                         }}
                         className="py-2 px-2"
                       >
@@ -246,7 +270,7 @@ function ClientDetails() {
                           lineHeight: "21.86px",
                           color: "#5C5C5C",
                           borderBottom: "1px solid #E4E7EC",
-                          textAlign:'center'
+                          textAlign: 'center'
                         }}
                         className="py-2 px-2"
                       >
@@ -279,11 +303,20 @@ function ClientDetails() {
                         }}
                         className="py-2 px-2"
                       >
-                        <button className="text-green-500 mr-2">✓</button>
-                        <button className="text-red-500">✕</button>
+                        <button
+                          className="text-green-500 mr-2 correct1"
+                          onClick={() => handleCorrectClick("correct1", "cross1")}
+                        >
+                          {iconState.correct1 ? "✓" : <img src={backButtton} alt="Back" />}
+                        </button>
+                        <button
+                          className="text-red-500 cross1"
+                          onClick={() => iconState.correct1 === false && handleCrossClick("correct1", "cross1")}
+                        >
+                          {iconState.cross1 ? "✕" : <img src={stopButton} alt="Stop" />}
+                        </button>
                       </td>
                     </tr>
-                    {/* Add more rows as needed */}
                     <tr>
                       <td
                         style={{
@@ -306,13 +339,13 @@ function ClientDetails() {
                           lineHeight: "21.86px",
                           color: "#5C5C5C",
                           borderBottom: "1px solid #E4E7EC",
-                          display:'flex',
-                          justifyContent:'space-between',
-                          textAlign:'center',
-                          alignContent:'center',
-                          alignItems:'center'
+                          display: 'flex',
+                          justifyContent: 'space-between',
+                          textAlign: 'center',
+                          alignContent: 'center',
+                          alignItems: 'center'
                         }}
-                        
+
                       >
                         <span className="bg-[#EBEE5D] text-[#9E932A]  rounded px-[8px] py-[4px]">
                           Existing
@@ -329,7 +362,7 @@ function ClientDetails() {
                           lineHeight: "21.86px",
                           color: "#5C5C5C",
                           borderBottom: "1px solid #E4E7EC",
-                          textAlign:'center'
+                          textAlign: 'center'
                         }}
                         className="py-2 px-2"
                       >
@@ -343,11 +376,11 @@ function ClientDetails() {
                           lineHeight: "21.86px",
                           color: "#5C5C5C",
                           borderBottom: "1px solid #E4E7EC",
-                          textAlign:'center'
+                          textAlign: 'center'
                         }}
                         className="py-2 px-2"
                       >
-                        05 : 00 
+                        05 : 00
                       </td>
                       <td
                         style={{
@@ -357,7 +390,7 @@ function ClientDetails() {
                           lineHeight: "21.86px",
                           color: "#5C5C5C",
                           borderBottom: "1px solid #E4E7EC",
-                          textAlign:'center'
+                          textAlign: 'center'
                         }}
                         className="py-2 px-2"
                       >
@@ -371,7 +404,7 @@ function ClientDetails() {
                           lineHeight: "21.86px",
                           color: "#5C5C5C",
                           borderBottom: "1px solid #E4E7EC",
-                          textAlign:'center'
+                          textAlign: 'center'
                         }}
                         className="py-2 px-2"
                       >
@@ -404,130 +437,18 @@ function ClientDetails() {
                         }}
                         className="py-2 px-2"
                       >
-                        <button className="text-green-500 mr-2">✓</button>
-                        <button className="text-red-500">✕</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        style={{
-                          fontFamily: "Manrope",
-                          fontSize: "16px",
-                          fontWeight: "500",
-                          lineHeight: "21.86px",
-                          color: "#5C5C5C",
-                          borderBottom: "1px solid #E4E7EC",
-                        }}
-                        className="py-2 px-2"
-                      >
-                        26 June | 5:33 PM
-                      </td>
-                      <td
-                        style={{
-                          fontFamily: "Manrope",
-                          fontSize: "16px",
-                          fontWeight: "500",
-                          lineHeight: "21.86px",
-                          color: "#5C5C5C",
-                          borderBottom: "1px solid #E4E7EC",
-                        }}
-                        className="py-2 px-2"
-                      >
-                        <span
-                          style={{
-                            padding: "4px 8px 4px 8px",
-                            gap: "10px",
-                            borderRadius: "4px",
-                          }}
-                          className="bg-green-200 text-green-800 py-1 px-2 rounded w-[58px]"
+                        <button
+                          className="text-green-500 mr-2 correct2"
+                          onClick={() => handleCorrectClick("correct2", "cross2")}
                         >
-                          New Client
-                        </span>
-                      </td>
-                      <td
-                        style={{
-                          fontFamily: "Manrope",
-                          fontSize: "16px",
-                          fontWeight: "500",
-                          lineHeight: "21.86px",
-                          color: "#5C5C5C",
-                          borderBottom: "1px solid #E4E7EC",
-                          textAlign:'center',
-
-                          
-                        }}
-                        className="py-2 px-2 text-center"
-                      >
-                        Project Arisyas
-                      </td>
-                      <td
-                        style={{
-                          fontFamily: "Manrope",
-                          fontSize: "16px",
-                          fontWeight: "500",
-                          lineHeight: "21.86px",
-                          color: "#5C5C5C",
-                          borderBottom: "1px solid #E4E7EC",
-                        }}
-                        className="py-2 px-2"
-                      >
-                        05 : 00 : 00 : 00 : 00
-                      </td>
-                      <td
-                        style={{
-                          fontFamily: "Manrope",
-                          fontSize: "16px",
-                          fontWeight: "500",
-                          lineHeight: "21.86px",
-                          color: "#5C5C5C",
-                          borderBottom: "1px solid #E4E7EC",
-                        }}
-                        className="py-2 px-2"
-                      >
-                        -
-                      </td>
-                      <td
-                        style={{
-                          fontFamily: "Manrope",
-                          fontSize: "16px",
-                          fontWeight: "500",
-                          lineHeight: "21.86px",
-                          color: "#5C5C5C",
-                          borderBottom: "1px solid #E4E7EC",
-                        }}
-                        className="py-2 px-2"
-                      >
-                        -
-                      </td>
-                      <td
-                        style={{
-                          fontFamily: "Manrope",
-                          fontSize: "16px",
-                          fontWeight: "500",
-                          lineHeight: "21.86px",
-                          color: "#5C5C5C",
-                          borderBottom: "1px solid #E4E7EC",
-                          textAlign: "-webkit-center",
-                        }}
-                        className="py-2 px-2"
-                      >
-                        <img src={notify} />
-                      </td>
-                      <td
-                        style={{
-                          fontFamily: "Manrope",
-                          fontSize: "16px",
-                          fontWeight: "500",
-                          lineHeight: "21.86px",
-                          color: "#5C5C5C",
-                          borderBottom: "1px solid #E4E7EC",
-                          display: "flex",
-                          justifyContent: "space-around",
-                        }}
-                        className="py-2 px-2"
-                      >
-                        <button className="text-green-500 mr-2">✓</button>
-                        <button className="text-red-500">✕</button>
+                          {iconState.correct2 ? "✓" : <img src={backButtton} alt="Back" />}
+                        </button>
+                        <button
+                          className="text-red-500 cross2"
+                          onClick={() => iconState.correct2 === false && handleCrossClick("correct2", "cross2")}
+                        >
+                          {iconState.cross2 ? "✕" : <img src={stopButton} alt="Stop" />}
+                        </button>
                       </td>
                     </tr>
                   </tbody>
@@ -596,7 +517,7 @@ function ClientDetails() {
                         lineHeight: "19.12px",
                         textAlign: "left",
                         color: "#5C5C5C",
-                        textAlign:'center'
+                        textAlign: 'center'
                       }}
                       className="py-2 px-4 text-left th1"
                     >
@@ -610,7 +531,7 @@ function ClientDetails() {
                         lineHeight: "19.12px",
                         textAlign: "left",
                         color: "#5C5C5C",
-                         textAlign:'center'
+                        textAlign: 'center'
                       }}
                       className="py-2 px-4 text-left th1"
                     >
@@ -623,7 +544,7 @@ function ClientDetails() {
                         fontWeight: "500",
                         lineHeight: "19.12px",
                         color: "#5C5C5C",
-                         textAlign:'center'
+                        textAlign: 'center'
                       }}
                       className="py-2 px-4 text-left th1"
                     >
@@ -635,7 +556,7 @@ function ClientDetails() {
                         fontSize: "14px",
                         fontWeight: "500",
                         lineHeight: "19.12px",
-                         textAlign:'center',
+                        textAlign: 'center',
                         color: "#5C5C5C",
                       }}
                       className="py-2 px-4 text-left th1"
@@ -648,7 +569,7 @@ function ClientDetails() {
                         fontSize: "14px",
                         fontWeight: "500",
                         lineHeight: "19.12px",
-                        textAlign:'center',
+                        textAlign: 'center',
                         color: "#5C5C5C",
                       }}
                       className="py-2 px-4 text-left th1"
@@ -661,7 +582,7 @@ function ClientDetails() {
                         fontSize: "14px",
                         fontWeight: "500",
                         lineHeight: "19.12px",
-                        textAlign:'center',
+                        textAlign: 'center',
                         color: "#5C5C5C",
                       }}
                       className="py-2 px-4 text-left th1"
@@ -677,7 +598,7 @@ function ClientDetails() {
                     fontWeight: "500",
                     lineHeight: "21.86px",
                     color: "#2B2B2B",
-                     textAlign:'center'
+                    textAlign: 'center'
                   }}
                 >
                   <tr>
@@ -724,6 +645,49 @@ function ClientDetails() {
                     </td>
                   </tr>
 
+                  <tr>
+                    <td
+                      style={{ borderBottom: "1px solid #E4E7EC" }}
+                      className="py-4 px-4"
+                    >
+                      Anand Jaiswal
+                    </td>
+                    <td
+                      style={{ borderBottom: "1px solid #E4E7EC" }}
+                      className="py-4 px-4"
+                    >
+                      Anandjaiswal@gmail.com
+                    </td>
+                    <td
+                      style={{ borderBottom: "1px solid #E4E7EC" }}
+                      className="py-4 px-4"
+                    >
+                      9854567524
+                    </td>
+                    <td
+                      style={{ borderBottom: "1px solid #E4E7EC" }}
+                      className="py-4 px-4"
+                    >
+                      ROF Aalayas
+                    </td>
+                    <td
+                      style={{ borderBottom: "1px solid #E4E7EC" }}
+                      className="py-4 px-4"
+                    >
+                      26 June | 5:33 PM
+                    </td>
+                    <td
+                      style={{ borderBottom: "1px solid #E4E7EC" }}
+                      className="py-4 px-4"
+                    >
+                      <span
+                        style={{ borderBottom: "1px solid #E4E7EC" }}
+                        className="bg-green-200 text-green-800 py-1 px-2 rounded"
+                      >
+                        Completed
+                      </span>
+                    </td>
+                  </tr>
                   <tr>
                     <td
                       style={{ borderBottom: "1px solid #E4E7EC" }}
