@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Home.css";
 import Searchsvg from "../../assets/material-symbols_search.svg";
 import { IoIosArrowForward } from "react-icons/io";
 import notify from "../../assets/add_notes (black).png";
 
 function ClientDetails() {
+
+
+
   return (
     <div>
       <div
@@ -61,7 +64,7 @@ function ClientDetails() {
                         style={{
                           fontFamily: "Manrope",
                           fontSize: "12px",
-                          fontWeight: "400",
+                          fontWeight: "500",
                           lineHeight: "16.39px",
                           color: "#4B4B4B",
                         }}
@@ -73,7 +76,7 @@ function ClientDetails() {
                         style={{
                           fontFamily: "Manrope",
                           fontSize: "12px",
-                          fontWeight: "400",
+                          fontWeight: "500",
                           lineHeight: "16.39px",
                           color: "#4B4B4B",
                         }}
@@ -85,7 +88,7 @@ function ClientDetails() {
                         style={{
                           fontFamily: "Manrope",
                           fontSize: "12px",
-                          fontWeight: "400",
+                          fontWeight: "500",
                           lineHeight: "16.39px",
                           color: "#4B4B4B",
                         }}
@@ -97,7 +100,7 @@ function ClientDetails() {
                         style={{
                           fontFamily: "Manrope",
                           fontSize: "12px",
-                          fontWeight: "400",
+                          fontWeight: "500",
                           lineHeight: "16.39px",
                           color: "#4B4B4B",
                           width:'85px'
@@ -110,7 +113,7 @@ function ClientDetails() {
                         style={{
                           fontFamily: "Manrope",
                           fontSize: "12px",
-                          fontWeight: "400",
+                          fontWeight: "500",
                           lineHeight: "16.39px",
                           color: "#4B4B4B",
                           textAlign:'center'
@@ -123,7 +126,7 @@ function ClientDetails() {
                         style={{
                           fontFamily: "Manrope",
                           fontSize: "12px",
-                          fontWeight: "400",
+                          fontWeight: "500",
                           lineHeight: "16.39px",
                           color: "#4B4B4B",
                           textAlign:'center'
@@ -136,7 +139,7 @@ function ClientDetails() {
                         style={{
                           fontFamily: "Manrope",
                           fontSize: "12px",
-                          fontWeight: "400",
+                          fontWeight: "500",
                           lineHeight: "16.39px",
                           color: "#4B4B4B",
                         }}
@@ -148,7 +151,7 @@ function ClientDetails() {
                         style={{
                           fontFamily: "Manrope",
                           fontSize: "12px",
-                          fontWeight: "400",
+                          fontWeight: "500",
                           lineHeight: "16.39px",
                           color: "#4B4B4B",
                         }}
@@ -189,7 +192,7 @@ function ClientDetails() {
                         }}
                         
                       >
-                        <span className="bg-green-200 text-green-800 py-1 px-2 rounded">
+                        <span className="bg-[#E1F8D7] text-[#48A321] py-1 px-2 rounded">
                           New Client
                         </span>
                         <span style={{ color: "#5C5C5C", fontSize: "18px" }}>
@@ -214,7 +217,7 @@ function ClientDetails() {
                         style={{
                           fontFamily: "Manrope",
                           fontSize: "16px",
-                          fontWeight: "500",
+                          fontWeight: "800",
                           lineHeight: "21.86px",
                           color: "#5C5C5C",
                           borderBottom: "1px solid #E4E7EC",
@@ -228,7 +231,7 @@ function ClientDetails() {
                         style={{
                           fontFamily: "Manrope",
                           fontSize: "16px",
-                          fontWeight: "500",
+                          fontWeight: "800",
                           lineHeight: "21.86px",
                           color: "#5C5C5C",
                           borderBottom: "1px solid #E4E7EC",
@@ -242,7 +245,7 @@ function ClientDetails() {
                         style={{
                           fontFamily: "Manrope",
                           fontSize: "16px",
-                          fontWeight: "500",
+                          fontWeight: "800",
                           lineHeight: "21.86px",
                           color: "#5C5C5C",
                           borderBottom: "1px solid #E4E7EC",
@@ -264,7 +267,7 @@ function ClientDetails() {
                         }}
                         className="py-2 px-2"
                       >
-                        <img src={notify} />
+                        <img src={notify}/>
                       </td>
                       <td
                         style={{
@@ -279,7 +282,7 @@ function ClientDetails() {
                         }}
                         className="py-2 px-2"
                       >
-                        <button className="text-green-500 mr-2">✓</button>
+                        <button className="text-[#48A321] mr-2">✓</button>
                         <button className="text-red-500">✕</button>
                       </td>
                     </tr>
@@ -339,7 +342,7 @@ function ClientDetails() {
                         style={{
                           fontFamily: "Manrope",
                           fontSize: "16px",
-                          fontWeight: "600",
+                          fontWeight: "800",
                           lineHeight: "21.86px",
                           color: "#5C5C5C",
                           borderBottom: "1px solid #E4E7EC",
@@ -353,7 +356,7 @@ function ClientDetails() {
                         style={{
                           fontFamily: "Manrope",
                           fontSize: "16px",
-                          fontWeight: "500",
+                          fontWeight: "800",
                           lineHeight: "21.86px",
                           color: "#5C5C5C",
                           borderBottom: "1px solid #E4E7EC",
@@ -361,13 +364,13 @@ function ClientDetails() {
                         }}
                         className="py-2 px-2"
                       >
-                        -
+                       00 : 00
                       </td>
                       <td
                         style={{
                           fontFamily: "Manrope",
                           fontSize: "16px",
-                          fontWeight: "500",
+                          fontWeight: "800",
                           lineHeight: "21.86px",
                           color: "#5C5C5C",
                           borderBottom: "1px solid #E4E7EC",
@@ -375,7 +378,7 @@ function ClientDetails() {
                         }}
                         className="py-2 px-2"
                       >
-                        -
+                       00 : 00
                       </td>
                       <td
                         style={{
@@ -404,134 +407,17 @@ function ClientDetails() {
                         }}
                         className="py-2 px-2"
                       >
-                        <button className="text-green-500 mr-2">✓</button>
+                        <button className="text-[#48A321] mr-2">✓</button>
                         <button className="text-red-500">✕</button>
                       </td>
                     </tr>
-                    <tr>
-                      <td
-                        style={{
-                          fontFamily: "Manrope",
-                          fontSize: "16px",
-                          fontWeight: "500",
-                          lineHeight: "21.86px",
-                          color: "#5C5C5C",
-                          borderBottom: "1px solid #E4E7EC",
-                        }}
-                        className="py-2 px-2"
-                      >
-                        26 June | 5:33 PM
-                      </td>
-                      <td
-                        style={{
-                          fontFamily: "Manrope",
-                          fontSize: "16px",
-                          fontWeight: "500",
-                          lineHeight: "21.86px",
-                          color: "#5C5C5C",
-                          borderBottom: "1px solid #E4E7EC",
-                        }}
-                        className="py-2 px-2"
-                      >
-                        <span
-                          style={{
-                            padding: "4px 8px 4px 8px",
-                            gap: "10px",
-                            borderRadius: "4px",
-                          }}
-                          className="bg-green-200 text-green-800 py-1 px-2 rounded w-[58px]"
-                        >
-                          New Client
-                        </span>
-                      </td>
-                      <td
-                        style={{
-                          fontFamily: "Manrope",
-                          fontSize: "16px",
-                          fontWeight: "500",
-                          lineHeight: "21.86px",
-                          color: "#5C5C5C",
-                          borderBottom: "1px solid #E4E7EC",
-                          textAlign:'center',
-
-                          
-                        }}
-                        className="py-2 px-2 text-center"
-                      >
-                        Project Arisyas
-                      </td>
-                      <td
-                        style={{
-                          fontFamily: "Manrope",
-                          fontSize: "16px",
-                          fontWeight: "500",
-                          lineHeight: "21.86px",
-                          color: "#5C5C5C",
-                          borderBottom: "1px solid #E4E7EC",
-                        }}
-                        className="py-2 px-2"
-                      >
-                        05 : 00 : 00 : 00 : 00
-                      </td>
-                      <td
-                        style={{
-                          fontFamily: "Manrope",
-                          fontSize: "16px",
-                          fontWeight: "500",
-                          lineHeight: "21.86px",
-                          color: "#5C5C5C",
-                          borderBottom: "1px solid #E4E7EC",
-                        }}
-                        className="py-2 px-2"
-                      >
-                        -
-                      </td>
-                      <td
-                        style={{
-                          fontFamily: "Manrope",
-                          fontSize: "16px",
-                          fontWeight: "500",
-                          lineHeight: "21.86px",
-                          color: "#5C5C5C",
-                          borderBottom: "1px solid #E4E7EC",
-                        }}
-                        className="py-2 px-2"
-                      >
-                        -
-                      </td>
-                      <td
-                        style={{
-                          fontFamily: "Manrope",
-                          fontSize: "16px",
-                          fontWeight: "500",
-                          lineHeight: "21.86px",
-                          color: "#5C5C5C",
-                          borderBottom: "1px solid #E4E7EC",
-                          textAlign: "-webkit-center",
-                        }}
-                        className="py-2 px-2"
-                      >
-                        <img src={notify} />
-                      </td>
-                      <td
-                        style={{
-                          fontFamily: "Manrope",
-                          fontSize: "16px",
-                          fontWeight: "500",
-                          lineHeight: "21.86px",
-                          color: "#5C5C5C",
-                          borderBottom: "1px solid #E4E7EC",
-                          display: "flex",
-                          justifyContent: "space-around",
-                        }}
-                        className="py-2 px-2"
-                      >
-                        <button className="text-green-500 mr-2">✓</button>
-                        <button className="text-red-500">✕</button>
-                      </td>
-                    </tr>
+                    
                   </tbody>
                 </table>
+           
+
+         
+
               </div>
             </div>
           </div>
@@ -670,6 +556,7 @@ function ClientDetails() {
                     </th>
                   </tr>
                 </thead>
+                
                 <tbody
                   style={{
                     fontFamily: "Manrope",
@@ -713,14 +600,18 @@ function ClientDetails() {
                     </td>
                     <td
                       style={{ borderBottom: "1px solid #E4E7EC" }}
-                      className="py-4 px-4"
+                      className="py-4 px-4 flex flex-wrap justify-between"
                     >
                       <span
                         style={{ borderBottom: "1px solid #E4E7EC" }}
-                        className="bg-green-200 text-green-800 py-1 px-2 rounded"
+                        className="bg-[#E1F8D7] text-[#48A321] py-1 px-2 rounded"
                       >
                         Completed
                       </span>
+
+                      <span>
+                      <button className="text-[#48A321] mr-2">✓</button>
+                        </span>
                     </td>
                   </tr>
 
@@ -757,14 +648,18 @@ function ClientDetails() {
                     </td>
                     <td
                       style={{ borderBottom: "1px solid #E4E7EC" }}
-                      className="py-4 px-4"
+                      className="py-4 px-4 flex flex-wrap justify-between"
                     >
                       <span
                         style={{ borderBottom: "1px solid #E4E7EC" }}
-                        className="bg-green-200 text-green-800 py-1 px-2 rounded"
+                        className="bg-[#E1F8D7] text-[#48A321] py-1 px-2 rounded"
                       >
                         Completed
                       </span>
+
+                      <span>
+                      <button className="text-[#48A321] mr-2">✓</button>
+                        </span>
                     </td>
                   </tr>
                   <tr>
@@ -800,14 +695,18 @@ function ClientDetails() {
                     </td>
                     <td
                       style={{ borderBottom: "1px solid #E4E7EC" }}
-                      className="py-4 px-4"
+                      className="py-4 px-4 flex flex-wrap justify-between"
                     >
                       <span
                         style={{ borderBottom: "1px solid #E4E7EC" }}
-                        className="bg-green-200 text-green-800 py-1 px-2 rounded"
+                        className="bg-[#E1F8D7] text-[#48A321] py-1 px-2 rounded"
                       >
                         Completed
                       </span>
+
+                      <span>
+                      <button className="text-[#48A321] mr-2">✓</button>
+                        </span>
                     </td>
                   </tr>
                   <tr>
@@ -843,14 +742,18 @@ function ClientDetails() {
                     </td>
                     <td
                       style={{ borderBottom: "1px solid #E4E7EC" }}
-                      className="py-4 px-4"
+                      className="py-4 px-4 flex flex-wrap justify-between"
                     >
                       <span
                         style={{ borderBottom: "1px solid #E4E7EC" }}
-                        className="bg-green-200 text-green-800 py-1 px-2 rounded"
+                        className="bg-[#E1F8D7] text-[#48A321] py-1 px-2 rounded"
                       >
                         Completed
                       </span>
+
+                      <span>
+                      <button className="text-[#48A321] mr-2">✓</button>
+                        </span>
                     </td>
                   </tr>
                   <tr>
@@ -886,14 +789,18 @@ function ClientDetails() {
                     </td>
                     <td
                       style={{ borderBottom: "1px solid #E4E7EC" }}
-                      className="py-4 px-4"
+                      className="py-4 px-4 flex flex-wrap justify-between"
                     >
                       <span
                         style={{ borderBottom: "1px solid #E4E7EC" }}
-                        className="bg-green-200 text-green-800 py-1 px-2 rounded"
+                        className="bg-[#E1F8D7] text-[#48A321] py-1 px-2 rounded"
                       >
                         Completed
                       </span>
+
+                      <span>
+                      <button className="text-[#48A321] mr-2">✓</button>
+                        </span>
                     </td>
                   </tr>
                   <tr>
@@ -929,14 +836,18 @@ function ClientDetails() {
                     </td>
                     <td
                       style={{ borderBottom: "1px solid #E4E7EC" }}
-                      className="py-4 px-4"
+                      className="py-4 px-4 flex flex-wrap justify-between"
                     >
                       <span
                         style={{ borderBottom: "1px solid #E4E7EC" }}
-                        className="bg-green-200 text-green-800 py-1 px-2 rounded"
+                        className="bg-[#E1F8D7] text-[#48A321] py-1 px-2 rounded"
                       >
                         Completed
                       </span>
+
+                      <span>
+                      <button className="text-[#48A321] mr-2">✓</button>
+                        </span>
                     </td>
                   </tr>
                   <tr>
@@ -972,14 +883,18 @@ function ClientDetails() {
                     </td>
                     <td
                       style={{ borderBottom: "1px solid #E4E7EC" }}
-                      className="py-4 px-4"
+                      className="py-4 px-4 flex flex-wrap justify-between"
                     >
                       <span
                         style={{ borderBottom: "1px solid #E4E7EC" }}
-                        className="bg-green-200 text-green-800 py-1 px-2 rounded"
+                        className="bg-[#E1F8D7] text-[#48A321] py-1 px-2 rounded"
                       >
                         Completed
                       </span>
+
+                      <span>
+                      <button className="text-[#48A321] mr-2">✓</button>
+                        </span>
                     </td>
                   </tr>
                   <tr>
@@ -1015,17 +930,24 @@ function ClientDetails() {
                     </td>
                     <td
                       style={{ borderBottom: "1px solid #E4E7EC" }}
-                      className="py-4 px-4"
+                      className="py-4 px-4 flex flex-wrap justify-between"
                     >
                       <span
                         style={{ borderBottom: "1px solid #E4E7EC" }}
-                        className="bg-green-200 text-green-800 py-1 px-2 rounded"
+                        className="bg-[#E1F8D7] text-[#48A321] py-1 px-2 rounded"
                       >
                         Completed
                       </span>
+
+                      <span>
+                      <button className="text-[#48A321] mr-2">✓</button>
+                        </span>
                     </td>
                   </tr>
+                  
                 </tbody>
+               
+               
               </table>
             </div>
           </div>
